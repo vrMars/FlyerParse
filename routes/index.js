@@ -43,14 +43,14 @@ router.post('/', (req, res, next) => {
                             {
                                 "text": {
                                     "text": [
-                                        output[0].price
+                                        "You can find " + output[0].name + " at " + output[0].merchant + " for " + output[0].price + " dollars."
                                     ]
                                 }
                             }
                         ]
                     };
 
-                    res.send(output);
+                    res.send(formattedOutput);
                 } catch(e) {
                     console.log('Error: ', e.stack);
                 }  
