@@ -4,7 +4,7 @@ var fs = require('fs');
 const { spawn } = require('child_process');
 
 router.post('/', (req, res, next) => {
-    console.log(req);
+    console.log(req.body);
 });
 
 /* GET home page. */
