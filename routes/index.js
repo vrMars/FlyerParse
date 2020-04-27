@@ -38,17 +38,23 @@ router.post('/', (req, res, next) => {
                         return a.price - b.price;
                     });
 
-                    const formattedOutput = {
-                        "fulfillmentMessages": [
-                            {
-                                "text": {
-                                    "text": [
-                                        "You can find " + output[0].name + " at " + output[0].merchant + " for " + output[0].price + " dollars."
-                                    ]
+                    const formattedOutput = 
+                        {
+                            "payload": {
+                                "google": {
+                                    "expectUserResponse": true,
+                                    "richResponse": {
+                                        "items": [
+                                            {
+                                                "simpleResponse": {
+                                                    "textToSpeech": "You can find " + output[0].name + " at " + output[0].merchant + " for " + output[0].price + " dollars."
+                                                }
+                                            }
+                                        ]
+                                    }
                                 }
                             }
-                        ]
-                    };
+                        };
 
                     res.send(formattedOutput);
                 } catch(e) {
