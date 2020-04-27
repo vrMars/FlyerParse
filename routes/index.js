@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
             console.log(code);
             if (code == 0) {
                 var merchants = fs.readFileSync('./dataset/merchants.txt', 'utf8').toString().split('\n');
-                const product = req.query.body.queryResult.parameters.food.toLowerCase();
+                const product = req.body.queryResult.parameters.food.toLowerCase();
                 try {
                     output = [];
                     for (const merchant of merchants) {
