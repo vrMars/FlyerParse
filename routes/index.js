@@ -9,8 +9,10 @@ router.get('/', function(req, res, next) {
         // run generation script
         const python = spawn('python3', ['./dataset/getFlyers.py']);
         python.on('close', (code) => {
+            console.log(code);
             if (code == 1) {
                 var merchants = fs.readFileSync('./dataset/merchants.txt', 'utf8').toString().split('\n');
+                console.log(merchants);
                 const product = req.query.product.toLowerCase();
                 try {
                     output = [];
@@ -18,6 +20,7 @@ router.get('/', function(req, res, next) {
                         if (merchant !== '') {
                             var data = fs.readFileSync('./dataset/' + merchant + '.json', 'utf8');
                             const obj = JSON.parse(data);
+                            console.log(obj);
                             // check query
                             const items = obj.items;
                             for (const item of items) {
