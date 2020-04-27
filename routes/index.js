@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         const python = spawn('python3', ['./dataset/getFlyers.py']);
         python.on('close', (code) => {
             console.log(code);
-            if (code == 1) {
+            if (code == 0) {
                 var merchants = fs.readFileSync('./dataset/merchants.txt', 'utf8').toString().split('\n');
                 console.log(merchants);
                 const product = req.query.product.toLowerCase();
