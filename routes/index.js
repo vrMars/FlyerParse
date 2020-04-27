@@ -4,7 +4,62 @@ var fs = require('fs');
 const { spawn } = require('child_process');
 
 router.post('/', (req, res, next) => {
-    console.log(req.body);
+    if (req.query.body.queryResult.parameters.food) {
+        // run generation script
+        const python = spawn('python3', ['./dataset/getFlyers.py']);
+        python.on('close', (code) => {
+            console.log(code);
+            if (code == 0) {
+                var merchants = fs.readFileSync('./dataset/merchants.txt', 'utf8').toString().split('\n');
+                const product = req.query.body.queryResult.parameters.food.toLowerCase();
+                try {
+                    output = [];
+                    for (const merchant of merchants) {
+                        if (merchant !== '') {
+                            var data = fs.readFileSync('./dataset/' + merchant + '.json', 'utf8');
+                            const obj = JSON.parse(data);
+                            // check query
+                            const items = obj.items;
+                            for (const item of items) {
+                                if (item.name && item.name.toLowerCase().includes(product)) {
+                                    output.push(
+                                    {
+                                        "name": item.name, 
+                                        "price": item.current_price, 
+                                        "merchant": item.merchant_name, 
+                                        "merchant_id": item.merchant_id 
+                                    });
+                                } 
+                            }
+                        }
+                    }
+                    output.sort((a,b) => {
+                        return a.price - b.price;
+                    });
+
+                    const formattedOutput = {
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        output[0].price
+                                    ]
+                                }
+                            }
+                        ]
+                    };
+
+                    res.send(output);
+                } catch(e) {
+                    console.log('Error: ', e.stack);
+                }  
+
+            }
+
+        })
+    } else {
+        res.render('index', { title: 'Express' });
+    } 
 });
 
 /* GET home page. */
