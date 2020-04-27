@@ -3,6 +3,10 @@ var router = express.Router();
 var fs = require('fs');
 const { spawn } = require('child_process');
 
+router.post('/', (req, res, next) => {
+    console.log(req);
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if (req.query.product) {
