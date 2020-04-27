@@ -5,8 +5,7 @@ const { spawn } = require('child_process');
 
 router.post('/', (req, res, next) => {
     console.log('here');
-    console.log(req.query.body.queryResult.parameters.food);
-    if (req.query.body.queryResult.parameters.food) {
+    if (req.body.queryResult.parameters.food) {
         // run generation script
         const python = spawn('python3', ['./dataset/getFlyers.py']);
         python.on('close', (code) => {
