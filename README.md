@@ -1,7 +1,8 @@
 # FlyerParse
 
 ## Description
-Scan a dataset of grocery store flyers and extract item prices via image-based machine learning
+Grocery apps like Flipp and Reebee can't sort items by price and so this endpoint fixes that.
+It scans a dataset of grocery store flyers + scrapes flyer websites and sorts items by price
 
 
 ## Demo
