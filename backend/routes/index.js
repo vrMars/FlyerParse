@@ -70,6 +70,7 @@ const { spawn } = require('child_process');
 // });
 
 router.post('/', (req, res, next) => {
+    console.log(req.body);
     if (req.body.items) {
         // run generation script
         const python = spawn('python3', ['./dataset/getFlyers.py']);
