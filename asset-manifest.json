@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/flyerParse/static/css/main.5f361e03.chunk.css",
-    "main.js": "/flyerParse/static/js/main.f3a2b233.chunk.js",
-    "main.js.map": "/flyerParse/static/js/main.f3a2b233.chunk.js.map",
-    "runtime-main.js": "/flyerParse/static/js/runtime-main.75b6b886.js",
-    "runtime-main.js.map": "/flyerParse/static/js/runtime-main.75b6b886.js.map",
-    "static/js/2.ada1840a.chunk.js": "/flyerParse/static/js/2.ada1840a.chunk.js",
-    "static/js/2.ada1840a.chunk.js.map": "/flyerParse/static/js/2.ada1840a.chunk.js.map",
-    "index.html": "/flyerParse/index.html",
-    "precache-manifest.5fe3ec848f88c6ebfd00e80f674a7a53.js": "/flyerParse/precache-manifest.5fe3ec848f88c6ebfd00e80f674a7a53.js",
-    "service-worker.js": "/flyerParse/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/flyerParse/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.ada1840a.chunk.js.LICENSE.txt": "/flyerParse/static/js/2.ada1840a.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/flyerParse/static/media/logo.5d5d9eef.svg"
+    "main.css": "/FlyerParse/static/css/main.5f361e03.chunk.css",
+    "main.js": "/FlyerParse/static/js/main.a2c50a0f.chunk.js",
+    "main.js.map": "/FlyerParse/static/js/main.a2c50a0f.chunk.js.map",
+    "runtime-main.js": "/FlyerParse/static/js/runtime-main.867882fc.js",
+    "runtime-main.js.map": "/FlyerParse/static/js/runtime-main.867882fc.js.map",
+    "static/js/2.ada1840a.chunk.js": "/FlyerParse/static/js/2.ada1840a.chunk.js",
+    "static/js/2.ada1840a.chunk.js.map": "/FlyerParse/static/js/2.ada1840a.chunk.js.map",
+    "index.html": "/FlyerParse/index.html",
+    "precache-manifest.f386006123bfbbca653d7f3b1964e668.js": "/FlyerParse/precache-manifest.f386006123bfbbca653d7f3b1964e668.js",
+    "service-worker.js": "/FlyerParse/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/FlyerParse/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.ada1840a.chunk.js.LICENSE.txt": "/FlyerParse/static/js/2.ada1840a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/FlyerParse/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.75b6b886.js",
+    "static/js/runtime-main.867882fc.js",
     "static/js/2.ada1840a.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.f3a2b233.chunk.js"
+    "static/js/main.a2c50a0f.chunk.js"
   ]
 }
