@@ -81,12 +81,45 @@ router.post('/', (req, res, next) => {
                 var product = null;
                 if (Array.isArray(req.body.items)) {
                     product = req.body.items.map(x => x.toLowerCase());
+                    try {
+                        const actualOutput = [];
+                        for (const p of product) {
+                            output = [];
+                            for (const merchant of merchants) {
+                                if (merchant !== '') {
+                                    var data = fs.readFileSync('./dataset/' + merchant + '.json', 'utf8');
+                                    const obj = JSON.parse(data);
+                                    // check query
+                                    const items = obj.items;
+                                    for (const item of items) {
+                                        if (item.name && item.name.toLowerCase().includes(p)) {
+                                            output.push(
+                                                {
+                                                    "name": item.name, 
+                                                    "price": item.current_price, 
+                                                    "merchant": item.merchant_name, 
+                                                    "merchant_id": item.merchant_id 
+                                                });
+                                        } 
+                                    }
+                                }
+                            }
+                            output.sort((a,b) => {
+                                return a.price - b.price;
+                            });
+                            actualOutput.push({
+                                p: [...output]
+                            });
+                        }
+
+                        res.send(actualOutput);
+                    } catch(e) {
+                        console.log('Error: ', e.stack);
+                    }  
                 } else {
                     product = req.body.items.toLowerCase();
-                }
-                try {
-                    const actualOutput = [];
-                    for (const p of product) {
+                    try {
+                        const actualOutput = [];
                         output = [];
                         for (const merchant of merchants) {
                             if (merchant !== '') {
@@ -95,7 +128,7 @@ router.post('/', (req, res, next) => {
                                 // check query
                                 const items = obj.items;
                                 for (const item of items) {
-                                    if (item.name && item.name.toLowerCase().includes(p)) {
+                                    if (item.name && item.name.toLowerCase().includes(product)) {
                                         output.push(
                                             {
                                                 "name": item.name, 
@@ -111,14 +144,14 @@ router.post('/', (req, res, next) => {
                             return a.price - b.price;
                         });
                         actualOutput.push({
-                            p: [...output]
+                            product: [...output]
                         });
-                    }
 
-                    res.send(actualOutput);
-                } catch(e) {
-                    console.log('Error: ', e.stack);
-                }  
+                        res.send(actualOutput);
+                    } catch(e) {
+                        console.log('Error: ', e.stack);
+                    }  
+                }
             }
         });
     } else {
