@@ -79,7 +79,7 @@ router.post('/', (req, res, next) => {
             if (code == 0) {
                 var merchants = fs.readFileSync('./dataset/merchants.txt', 'utf8').toString().split('\n');
                 var product = null;
-                if (req.body.items.isArray()) {
+                if (Array.isArray(req.body.items)) {
                     product = req.body.items.map(x => x.toLowerCase());
                 } else {
                     product = req.body.items.toLowerCase();
