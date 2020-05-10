@@ -57,16 +57,17 @@ class ItemList extends Component {
 
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Access-Control-Allow-Origin", '*');
 
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
                 body: urlEncoded,
-                redirect: 'follow'
+                redirect: 'follow',
             };
 
             fetch(
-                'https://flyer-parse.herokuapp.com/', requestOptions
+                'https://cors-anywhere.herokuapp.com/https://flyer-parse.herokuapp.com/', requestOptions
             )
                 .then(res => res.json())
                 .then((data) => {
