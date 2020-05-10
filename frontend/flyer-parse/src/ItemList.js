@@ -94,7 +94,7 @@ class ItemList extends Component {
                     this.state.prices && this.state.prices.map((product, i) =>
                         Array.isArray(product) ?
                         product.p.map((price, index) => 
-                        <Prices key={index} price={price.p}/>
+                            <Prices key={index} price={price.p} name={"test"}/>
                         ) : <Prices key={i} price={product.p[0]}/>
                     )}
             </div>
