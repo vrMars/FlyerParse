@@ -144,7 +144,7 @@ router.post('/', (req, res, next) => {
                             return a.price - b.price;
                         });
                         actualOutput.push({
-                            product: [...output]
+                            p: [...output]
                         });
 
                         res.send(actualOutput);
