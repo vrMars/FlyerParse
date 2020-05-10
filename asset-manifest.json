@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/FlyerParse/static/css/main.b8affb15.chunk.css",
-    "main.js": "/FlyerParse/static/js/main.3a52f789.chunk.js",
-    "main.js.map": "/FlyerParse/static/js/main.3a52f789.chunk.js.map",
+    "main.js": "/FlyerParse/static/js/main.0f0b92e2.chunk.js",
+    "main.js.map": "/FlyerParse/static/js/main.0f0b92e2.chunk.js.map",
     "runtime-main.js": "/FlyerParse/static/js/runtime-main.867882fc.js",
     "runtime-main.js.map": "/FlyerParse/static/js/runtime-main.867882fc.js.map",
     "static/js/2.2d1a760d.chunk.js": "/FlyerParse/static/js/2.2d1a760d.chunk.js",
     "static/js/2.2d1a760d.chunk.js.map": "/FlyerParse/static/js/2.2d1a760d.chunk.js.map",
     "index.html": "/FlyerParse/index.html",
-    "precache-manifest.1320b652056f2745449f658d7076f897.js": "/FlyerParse/precache-manifest.1320b652056f2745449f658d7076f897.js",
+    "precache-manifest.d8b6bb7b3a305ef3165781907be3ccf8.js": "/FlyerParse/precache-manifest.d8b6bb7b3a305ef3165781907be3ccf8.js",
     "service-worker.js": "/FlyerParse/service-worker.js",
     "static/css/main.b8affb15.chunk.css.map": "/FlyerParse/static/css/main.b8affb15.chunk.css.map",
     "static/js/2.2d1a760d.chunk.js.LICENSE.txt": "/FlyerParse/static/js/2.2d1a760d.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.867882fc.js",
     "static/js/2.2d1a760d.chunk.js",
     "static/css/main.b8affb15.chunk.css",
-    "static/js/main.3a52f789.chunk.js"
+    "static/js/main.0f0b92e2.chunk.js"
   ]
 }
