@@ -81,7 +81,7 @@ router.post('/', (req, res, next) => {
                 const product = req.body.items.map(x => x.toLowerCase());
                 try {
                     const actualOutput = [];
-                    for (const p of products) {
+                    for (const p of product) {
                         output = [];
                         for (const merchant of merchants) {
                             if (merchant !== '') {
